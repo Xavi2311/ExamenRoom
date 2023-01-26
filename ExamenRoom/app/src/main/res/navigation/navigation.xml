@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment1">
 
+
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.example.examenroom.ui.Fragment1"
+        android:label="fragment_1"
+        tools:layout="@layout/fragment_1" >
+        <action
+            android:id="@+id/action_fragment1_to_fragmentIntroduir"
+            app:destination="@id/fragmentIntroduir" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentIntroduir"
+        android:name="com.example.examenroom.ui.FragmentIntroduir"
+        android:label="fragment_introduir"
+        tools:layout="@layout/fragment_introduir" >
+        <action
+            android:id="@+id/action_fragmentIntroduir_to_fragment1"
+            app:destination="@id/fragment1"
+            app:popUpTo="@id/fragment1" />
+    </fragment>
 </navigation>
